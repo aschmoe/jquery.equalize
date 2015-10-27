@@ -1,4 +1,4 @@
-!function($) {
+(function($) {
   // Function normalizes height
   // looks for [data-equalizer], and equals 
   // height for all [data-equalize-height] children
@@ -85,4 +85,4 @@
 
       return self.init();
   });
-}(jQuery);
+})(jQuery);
