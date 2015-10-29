@@ -1,6 +1,6 @@
 # jquery.equalizeHeight
 
-Requires https://github.com/desandro/imagesloaded.  Not included in current script.
+Requires https://github.com/alexanderdickson/waitForImages.  Not included in current script.
 
 Simple jquery height equalizer, sets a watcher on a parent and children selectors.  Default children are identified by ```[data-equalize-height]``` attribute.
 
