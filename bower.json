@@ -23,6 +23,6 @@
     "tests"
   ],
   "dependencies": {
-    "waitForImages": "~2.1.0"
+    "imagesloaded": "~3.1.8"
   }
 }

@@ -44,13 +44,9 @@
 
       self.equalize = function(firstCall) {
           if(firstCall) {
-              $(self).waitForImages({
-                  finished: function() {
-                      self.runCalc();
-                  },
-                  each: $.noop,
-                  waitForAll: true
-              });
+            $(self).imagesLoaded().done( function( instance ) {
+              self.runCalc();
+            });
           }
           else {
               self.reset();
