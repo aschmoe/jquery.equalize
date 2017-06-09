@@ -43,7 +43,7 @@
       }
 
       self.equalize = function(firstCall) {
-          if(firstCall) {
+          if(firstCall && $.fn.waitForImages) {
               $(self).waitForImages({
                   finished: function() {
                       self.runCalc();
@@ -76,13 +76,23 @@
           };
       }
 
-      self.setWatch = function() {
-          // Set watch
-          $(window).on('resize.equalizer', self.throttle(function () {
-              self.equalize();
-          }, 50));
+      self.resizeFunction = function() {
+        self.throttle(function () {
+            self.equalize();
+        }, 50);
       }
 
-      return self.init();
+      self.setWatch = function() {
+        // Set watch
+        $(window).on('resize.equalizer', self.resizeFunction);
+      }
+
+      self.clearWatch = function() {
+        $(window).off('resize.equalizer', null, self.resizeFunction);
+      }
+
+      self.init();
+
+      return self;
   });
 })(jQuery);
